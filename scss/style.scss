@@ -1,0 +1,51 @@
+$heigth-menu: 100px;
+$text-menu-color: #fff;
+$text-menu-color-hover: #3498db;
+$menu-color: #042562;
+
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+header{
+  background-color: $menu-color;
+  height: $heigth-menu;
+  color: $text-menu-color;
+  text-transform: uppercase;
+  padding: 0 20px;
+  .logo{
+    float: left;
+    line-height: $heigth-menu;;
+  }
+  ul, label.show-menu-btn{
+    float: right;
+    line-height: $heigth-menu;;
+    a{
+      padding: 0 10px;
+      text-decoration: none;
+      color: $text-menu-color;
+      transition: .4s;
+      &:hover{
+        color: $text-menu-color-hover
+      }
+    }
+  }
+  label.show-menu-btn, label.hide-menu-btn{
+    transition: .4s;
+    &:hover{
+      color: $text-menu-color-hover
+    }
+  }
+}
+
+section{
+  margin: 15px auto;
+  padding: 15px;
+  max-width: 900px;
+  text-align: justify;
+  P {
+    margin: 10px 0px;
+  }
+}
