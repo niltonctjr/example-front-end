@@ -5,7 +5,7 @@
 }
 
 header {
-  background-color: #042562;
+  background-color: #34495e;
   height: 100px;
   color: #fff;
   text-transform: uppercase;
@@ -17,12 +17,12 @@ header .logo {
   line-height: 100px;
 }
 
-header ul, header label.show-menu-btn {
+header ul.menu, header label.show.menu-btn {
   float: right;
   line-height: 100px;
 }
 
-header ul a, header label.show-menu-btn a {
+header ul.menu a, header label.show.menu-btn a {
   padding: 0 10px;
   text-decoration: none;
   color: #fff;
@@ -30,17 +30,64 @@ header ul a, header label.show-menu-btn a {
   transition: .4s;
 }
 
-header ul a:hover, header label.show-menu-btn a:hover {
+header ul.menu a:hover, header label.show.menu-btn a:hover {
   color: #3498db;
 }
 
-header label.show-menu-btn, header label.hide-menu-btn {
+@media (max-width: 900px) {
+  header ul.menu a, header label.show.menu-btn a {
+    display: block;
+    padding: 20px;
+  }
+}
+
+header ul.menu {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  header ul.menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    right: -100%;
+    top: 0;
+    padding: 80px 0;
+    text-align: center;
+    line-height: normal;
+    -webkit-transition: .7s;
+    transition: .7s;
+  }
+}
+
+header label.menu-btn, header label.menu-btn {
+  display: none;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
-header label.show-menu-btn:hover, header label.hide-menu-btn:hover {
+header label.menu-btn:hover, header label.menu-btn:hover {
   color: #3498db;
+}
+
+@media (max-width: 900px) {
+  header label.menu-btn, header label.menu-btn {
+    display: block;
+  }
+  header label.menu-btn.hide, header label.menu-btn.hide {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+}
+
+header #chk {
+  visibility: hidden;
+}
+
+header #chk:checked ~ ul.menu {
+  right: 0;
 }
 
 section {

@@ -1,7 +1,7 @@
 $heigth-menu: 100px;
 $text-menu-color: #fff;
 $text-menu-color-hover: #3498db;
-$menu-color: #042562;
+$menu-color: #34495e;
 
 *{
   margin: 0px;
@@ -19,9 +19,9 @@ header{
     float: left;
     line-height: $heigth-menu;;
   }
-  ul, label.show-menu-btn{
+  ul.menu, label.show.menu-btn{
     float: right;
-    line-height: $heigth-menu;;
+    line-height: $heigth-menu;
     a{
       padding: 0 10px;
       text-decoration: none;
@@ -30,12 +30,46 @@ header{
       &:hover{
         color: $text-menu-color-hover
       }
+      @media(max-width: 900px){
+        display: block;        
+        padding: 20px;
+      }
     }
   }
-  label.show-menu-btn, label.hide-menu-btn{
+  ul.menu {
+    display: block;
+    @media(max-width: 900px){
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background-color: #333;
+      right: -100%;
+      top:0;
+      padding: 80px 0;
+      text-align: center;
+      line-height: normal;
+      transition: .7s;
+    }
+  }
+  label.menu-btn, label.menu-btn{
+    display: none;
     transition: .4s;
     &:hover{
       color: $text-menu-color-hover
+    }
+    @media(max-width: 900px){
+      display: block;
+      &.hide{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+      }
+    }
+  }
+  #chk{
+    visibility: hidden;
+    &:checked ~ ul.menu{
+      right: 0;
     }
   }
 }
